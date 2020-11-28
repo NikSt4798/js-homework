@@ -1,4 +1,3 @@
-import { it } from "@jest/globals";
 import { task1, comp, sum } from "./task1";
 
 describe("Task 1", () => {
