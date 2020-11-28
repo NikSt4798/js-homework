@@ -1,4 +1,4 @@
-export function task1(a, b) {
+function task1(a, b) {
   console.log(sum(a, b));
   console.log(comp(a, b));
 }
