@@ -17,7 +17,6 @@ describe("Task 2", () => {
       var result;
 
       paragraphs.forEach((el) => {
-        console.log(el.innerText, test);
         if (el.innerText == test) result = true;
       });
 
