@@ -1,5 +1,6 @@
 import { checkIfInputEmpty } from "./task1.js";
 import { addParagraph } from "./task2.js";
+import { removeExtraParagraphs } from "./task3.js";
 
 const input = document.querySelector("input");
 const button = document.querySelector("button");
@@ -11,6 +12,6 @@ input.addEventListener("input", function () {
 });
 
 button.addEventListener("click", function () {
-  console.log("click");
   addParagraph(document);
+  removeExtraParagraphs(document);
 });
