@@ -1,15 +1,37 @@
-import { getSum } from "./task3";
+import { task3 } from "./task3";
 
 describe("Task 3", () => {
-  it("Returns correct value", () => {
-    expect(getSum(123)).toBe(6);
-    expect(getSum(456)).toBe(15);
-    expect(getSum(100)).toBe(1);
-  });
+  [
+    {
+      value: 123,
+      result: 6,
+    },
+    {
+      value: 100,
+      result: 1,
+    },
+    {
+      value: "000",
+      result: "The value is not 3-digit",
+    },
+    {
+      value: 99,
+      result: "The value is not 3-digit",
+    },
+    {
+      value: 1000,
+      result: "The value is not 3-digit",
+    },
+  ].forEach((test) => {
+    it(`show correct result with value = ${test.value}`, () => {
+      jest.spyOn(console, "log");
+      jest
+        .spyOn(global.window, "prompt")
+        .mockImplementationOnce(() => test.value);
 
-  it("Returns error on wrong value", () => {
-    expect(getSum(12)).toBe("The value is not 3-digit");
-    expect(getSum(0)).toBe("The value is not 3-digit");
-    expect(getSum("string")).toBe(NaN);
+      task3();
+
+      expect(console.log).toBeCalledWith(test.result);
+    });
   });
 });

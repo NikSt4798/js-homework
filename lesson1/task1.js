@@ -1,9 +1,12 @@
-function task1(a, b) {
+export function task1() {
+  let a = prompt("Введите а");
+  let b = prompt("Введите b");
+
   console.log(sum(a, b));
   console.log(comp(a, b));
 }
 
-export function sum(a, b) {
+function sum(a, b) {
   if (typeof (a + b) === "string") {
     return NaN;
   } else {
@@ -11,6 +14,6 @@ export function sum(a, b) {
   }
 }
 
-export function comp(a, b) {
+function comp(a, b) {
   return a * b;
 }

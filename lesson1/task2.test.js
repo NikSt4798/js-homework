@@ -1,13 +1,31 @@
-import { symbolsCount } from "./task2";
+import { task2 } from "./task2";
 
 describe("Task 2", () => {
-  it("returns correct result", () => {
-    expect(symbolsCount("123", "789")).toBe(6);
-    expect(symbolsCount("skditu", "=-p[]")).toBe(11);
-  });
+  [
+    {
+      a: "123",
+      b: "4567",
+      result: 7,
+    },
+    {
+      a: "one two three",
+      b: "four",
+      result: 17,
+    },
+    {
+      a: "  ",
+      b: "     ",
+      result: 7,
+    },
+  ].forEach((test) => {
+    it(`show correct result with first string = ${test.a} and second string = ${test.b}`, () => {
+      jest.spyOn(console, "log");
+      jest.spyOn(global.window, "prompt").mockImplementationOnce(() => test.a);
+      jest.spyOn(global.window, "prompt").mockImplementationOnce(() => test.b);
 
-  it("returns wrong result", () => {
-    expect(symbolsCount(123, 789)).toBe(NaN);
-    expect(symbolsCount([], {})).toBe(NaN);
+      task2();
+
+      expect(console.log).toBeCalledWith(test.result);
+    });
   });
 });

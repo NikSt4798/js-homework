@@ -1,7 +1,6 @@
-function task2(a, b) {
-  console.log(symbolsCount(a, b));
-}
+export function task2() {
+  let a = prompt("Введите первую строку");
+  let b = prompt("Введите вторую строку");
 
-export function symbolsCount(a, b) {
-  return a.length + b.length;
+  console.log(a.length + b.length);
 }
