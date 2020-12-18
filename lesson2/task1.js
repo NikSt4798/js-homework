@@ -1,8 +1,6 @@
-const a = 10;
-const b = 15;
+export function task1() {
+  const a = prompt("Enter a");
+  const b = prompt("Enter b");
 
-console.log(getBigger(a, b));
-
-export function getBigger(a, b) {
-  return a > b ? a : b;
+  console.log(a > b ? a : b);
 }

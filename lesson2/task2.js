@@ -1,34 +1,48 @@
-const number = prompt("Enter number of the month", "1");
+export function task2() {
+  const number = prompt("Enter number of the month", "1");
 
-console.log(getMonth(number));
+  let result;
 
-export function getMonth(number) {
   switch (number) {
     case "1":
-      return "January";
+      result = "January";
+      break;
     case "2":
-      return "February";
+      result = "February";
+      break;
     case "3":
-      return "March";
+      result = "March";
+      break;
     case "4":
-      return "April";
+      result = "April";
+      break;
     case "5":
-      return "May";
+      result = "May";
+      break;
     case "6":
-      return "June";
+      result = "June";
+      break;
     case "7":
-      return "July";
+      result = "July";
+      break;
     case "8":
-      return "August";
+      result = "August";
+      break;
     case "9":
-      return "September";
+      result = "September";
+      break;
     case "10":
-      return "October";
+      result = "October";
+      break;
     case "11":
-      return "November";
+      result = "November";
+      break;
     case "12":
-      return "December";
+      result = "December";
+      break;
     default:
-      return "No such month";
+      result = "No such month";
   }
+
+  console.log(result);
 }
