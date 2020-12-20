@@ -1,9 +1,9 @@
-export function addParagraph(document) {
-  const input = document.querySelector("input");
+export function addParagraph(el) {
+  const input = el.querySelector("input");
 
   const p = document.createElement("p");
   p.innerText = input.value;
   input.value = "";
 
-  document.body.append(p);
+  el.appendChild(p);
 }

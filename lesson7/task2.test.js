@@ -1,18 +1,20 @@
 import { addParagraph } from "./task2";
 
 describe("Task 2", () => {
+  let div;
+
   beforeEach(() => {
-    document.body.innerHTML = "";
+    div = document.createElement("div");
   });
   ["text", "", 123].forEach((test) => {
     it(`appends ${test} to the body`, () => {
       const input = document.createElement("input");
       input.value = test;
-      document.body.append(input);
+      div.appendChild(input);
 
-      addParagraph(document);
+      addParagraph(div);
 
-      var paragraphs = document.querySelectorAll("p");
+      var paragraphs = div.querySelectorAll("p");
 
       var result;
 
