@@ -1,13 +1,5 @@
-const array = [10, 45, 37, 84, 45, 23, 64, 43, 92, 14];
+export function task1() {
+  const array = [10, 45, 37, 84, 45, 23, 64, 43, 92, 14];
 
-console.log(arraySum(array));
-
-export function arraySum(array) {
-  let sum = 0;
-
-  array.forEach((element) => {
-    sum += element;
-  });
-
-  return sum;
+  console.log(array.reduce((sum, element) => (sum += element)));
 }
