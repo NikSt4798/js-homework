@@ -1,21 +1,31 @@
 {
   "name": "js-homework",
+  "jest": {
+    "verbose": true
+  },
   "version": "1.0.0",
   "description": "��#\u0000 \u0000j\u0000s\u0000-\u0000h\u0000o\u0000m\u0000e\u0000w\u0000o\u0000r\u0000k\u0000\r\u0000 \u0000",
   "main": "index.js",
   "dependencies": {
-    "jest": "^26.6.3"
+    "@babel/core": "^7.12.9",
+    "babel-jest": "^26.6.3"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.7",
+    "@jest/globals": "^26.6.2",
+    "@types/jest": "^26.0.15",
+    "babel": "^6.23.0",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-jest": "^24.1.3",
     "husky": "^4.3.0",
+    "jest": "^26.6.3",
     "lint-staged": "^10.5.2",
     "prettier": "^2.2.1"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest -o",
+    "test:all": "jest",
     "lint": "prettier --check . && eslint .",
     "lint:fix": "prettier --write . && eslint . --fix"
   },
@@ -36,7 +46,10 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.js": [
+      "eslint --fix",
+      "jest -o"
+    ],
+    "*.{js,css,md,json}": "prettier --write"
   }
 }
