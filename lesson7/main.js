@@ -9,11 +9,11 @@ export function createLayout(el) {
   }
 
   const input = document.createElement("input");
-
   el.appendChild(input);
 
-  input.addEventListener("input", function () {
-    checkIfInputEmpty(this, button);
+  input.addEventListener("input", (event) => {
+    console.log("Input event");
+    checkIfInputEmpty(event.target, button);
   });
 
   const button = document.createElement("button");
@@ -23,8 +23,9 @@ export function createLayout(el) {
   button.className = "btn";
 
   button.addEventListener("click", function () {
-    addParagraph(document);
-    removeExtraParagraphs(document);
+    console.log("Click event");
+    addParagraph(el);
+    removeExtraParagraphs(el);
   });
 }
 

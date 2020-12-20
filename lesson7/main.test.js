@@ -25,4 +25,18 @@ describe("Check layout creation", () => {
     const p = element.querySelectorAll("p");
     expect(p.length).toBe(3);
   });
+
+  it("check event listeners", () => {
+    jest.spyOn(console, "log");
+
+    const input = element.querySelector("input");
+    input.dispatchEvent(new Event("input"));
+
+    expect(console.log).toBeCalledWith("Input event");
+
+    const button = element.querySelector(".btn");
+    button.dispatchEvent(new Event("click"));
+
+    expect(console.log).toBeCalledWith("Click event");
+  });
 });
