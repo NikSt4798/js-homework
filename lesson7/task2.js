@@ -3,6 +3,7 @@ export function addParagraph(document) {
 
   const p = document.createElement("p");
   p.innerText = input.value;
+  input.value = "";
 
   document.body.append(p);
 }

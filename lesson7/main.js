@@ -2,16 +2,30 @@ import { checkIfInputEmpty } from "./task1.js";
 import { addParagraph } from "./task2.js";
 import { removeExtraParagraphs } from "./task3.js";
 
-const input = document.querySelector("input");
-const button = document.querySelector("button");
+export function createLayout(el) {
+  for (let i = 0; i < 3; i++) {
+    const p = document.createElement("p");
+    el.appendChild(p);
+  }
 
-checkIfInputEmpty(input, button);
+  const input = document.createElement("input");
 
-input.addEventListener("input", function () {
-  checkIfInputEmpty(this, button);
-});
+  el.appendChild(input);
 
-button.addEventListener("click", function () {
-  addParagraph(document);
-  removeExtraParagraphs(document);
-});
+  input.addEventListener("input", function () {
+    checkIfInputEmpty(this, button);
+  });
+
+  const button = document.createElement("button");
+  button.innerText = "Click me!";
+
+  el.appendChild(button);
+  button.className = "btn";
+
+  button.addEventListener("click", function () {
+    addParagraph(document);
+    removeExtraParagraphs(document);
+  });
+}
+
+// createLayout(document.querySelector('div'))
