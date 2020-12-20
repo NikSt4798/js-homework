@@ -1,5 +1,3 @@
-import { isCircleFit } from "./task3";
-
 import { task3 } from "./task3";
 
 describe("Task 3", () => {

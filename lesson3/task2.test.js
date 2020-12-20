@@ -1,10 +1,12 @@
-import { getLine } from "./task2";
+import { task2 } from "./task2";
 
 describe("Task 2", () => {
-  it("Returns full statement", () => {
-    expect(getLine(3)).toBe("7 x 3 = 21");
-    expect(getLine(5)).toBe("7 x 5 = 35");
-    expect(getLine(7)).toBe("7 x 7 = 49");
-    expect(getLine(9)).toBe("7 x 9 = 63");
+  it(`should print 3825`, () => {
+    jest.spyOn(console, "log");
+
+    task2();
+
+    expect(console.log).toBeCalledTimes(9);
+    expect(console.log).lastCalledWith("7 x 9 = 63");
   });
 });

@@ -1,8 +1,6 @@
-const n = prompt("Enter N", 100);
+export function task3() {
+  const number = prompt("Enter N");
 
-console.log(getAverage(n));
-
-export function getAverage(number) {
   let sum = 0;
   let j = 0;
 
@@ -11,5 +9,5 @@ export function getAverage(number) {
     j++;
   }
 
-  return sum / j;
+  console.log(sum / j);
 }
