@@ -1,8 +1,30 @@
-import { isCircleFit } from "./task3";
+import { task3 } from "./task3";
 
 describe("Task 3", () => {
-  it("Should inform about fitting", () => {
-    expect(isCircleFit(314, 400)).toBe("Circle will fit");
-    expect(isCircleFit(35, 40)).toBe("Circle won't fit");
+  [
+    {
+      circle: 314,
+      square: 400,
+      result: "Circle will fit",
+    },
+    {
+      circle: 35,
+      square: 40,
+      result: "Circle won't fit",
+    },
+  ].forEach((test) => {
+    it(`show ${test.result} with square area = ${test.square} and circle area = ${test.circle}`, () => {
+      jest.spyOn(console, "log");
+      jest
+        .spyOn(global.window, "prompt")
+        .mockImplementationOnce(() => test.circle);
+      jest
+        .spyOn(global.window, "prompt")
+        .mockImplementationOnce(() => test.square);
+
+      task3();
+
+      expect(console.log).toBeCalledWith(test.result);
+    });
   });
 });

@@ -1,11 +1,9 @@
-console.log(getSum());
-
-export function getSum() {
+export function task1() {
   let sum = 0;
 
   for (let i = 50; i <= 100; i++) {
     sum += i;
   }
 
-  return sum;
+  console.log(sum);
 }

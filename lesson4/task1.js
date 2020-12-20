@@ -1,13 +1,11 @@
-const user = {
-  name: "John",
-};
+export function task1() {
+  const user = {
+    name: "John",
+  };
 
-const age = prompt("Enter age");
+  const age = prompt("Enter age");
 
-addAge(user, age);
+  user.age = age;
 
-export function addAge(object, age) {
-  object.age = age;
+  console.log(user.age);
 }
-
-console.log(user);

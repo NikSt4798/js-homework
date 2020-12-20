@@ -1,10 +1,29 @@
-import { getAverage } from "./task3";
+import { task3 } from "./task3";
 
 describe("Task 3", () => {
-  it("Returns average value", () => {
-    expect(getAverage(10)).toBe(5);
-    expect(getAverage(15)).toBe(8);
-    expect(getAverage(1)).toBe(1);
-    expect(getAverage(1)).toBe(1);
+  [
+    {
+      number: 100,
+      result: 50,
+    },
+    {
+      number: 50,
+      result: 25,
+    },
+    {
+      number: 250,
+      result: 125,
+    },
+  ].forEach((test) => {
+    it(`show ${test.result} for N = ${test.number}`, () => {
+      jest.spyOn(console, "log");
+      jest
+        .spyOn(global.window, "prompt")
+        .mockImplementationOnce(() => test.number);
+
+      task3();
+
+      expect(console.log).toBeCalledWith(test.result);
+    });
   });
 });

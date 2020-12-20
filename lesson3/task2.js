@@ -1,7 +1,5 @@
-for (let i = 1; i < 10; i++) {
-  console.log(getLine(i));
-}
-
-export function getLine(number) {
-  return `7 x ${number} = ${7 * number}`;
+export function task2() {
+  for (let i = 1; i < 10; i++) {
+    console.log(`7 x ${i} = ${7 * i}`);
+  }
 }

@@ -1,7 +1,11 @@
-import { getSum } from "./task1";
+import { task1 } from "./task1";
 
 describe("Task 1", () => {
-  it("Returns sum from 50 to 100", () => {
-    expect(getSum()).toBe(3825);
+  it(`should print 3825`, () => {
+    jest.spyOn(console, "log");
+
+    task1();
+
+    expect(console.log).toBeCalledWith(3825);
   });
 });
